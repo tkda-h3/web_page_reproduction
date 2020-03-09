@@ -1,0 +1,407 @@
+@charset "UTF-8";
+
+/* --------------------------------
+ * base
+ * -------------------------------- */
+html {
+  font-size: 62.5%;
+}
+body {
+  background: #151515 url('../images/bg.png') no-repeat fixed left bottom;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Raleway, "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------
+ * parts
+ * -------------------------------- */
+.heading {
+  position: relative;
+  display: inline-block;
+  margin: 30px 0 15px;
+  padding-bottom: 15px;
+  letter-spacing: 2px;
+  font-size: 4rem;
+}
+.heading::before,
+.heading::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid;
+  vertical-align: 7px;
+  transform: rotate(45deg);
+}
+.heading::before {
+  margin-right: 20px;
+}
+.heading::after {
+  margin-left: 20px;
+}
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #afa58d;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button-showy {
+  background-color: #D29E04;
+}
+.button-ghost {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* --------------------------------
+ * header
+ * -------------------------------- */
+.header {
+  padding: 170px 30px 80px;
+}
+.site-title-sub {
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+}
+.site-title-sub::before,
+.site-title-sub::after {
+  content: '';
+  display: inline-block;
+  width: 140px;
+  height: 2px;
+  margin: 0 30px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+.site-title {
+  margin: 50px 0 40px;
+  font-size: 7.6rem;
+}
+.site-description {
+  margin-bottom: 50px;
+  color: #888;
+  font-size: 1.6rem;
+}
+.buttons .button {
+  margin: 10px;
+}
+
+
+/* --------------------------------
+ * about
+ * -------------------------------- */
+.about {
+  padding: 80px 30px;
+  background-color: #fff;
+  color: #333;
+}
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+}
+
+
+/* !* -------------------------------- */
+/* * works */
+/* * -------------------------------- *! */
+.works {
+ padding: 80px 0;
+ background-color: #383634;
+}
+
+.works-wrapper {
+  display: flex;
+  margin-top: 60px;
+}
+.work-image {
+  display: block;
+  width: 100%;
+  margin: 0 0 60%;
+  transition: 500ms;
+}
+.work-box:nth-of-type(odd) .work-image {
+  transform-origin: 50% top;
+}
+
+.work-box:nth-of-type(even) .work-image {
+  transform-origin: 50% bottom;
+}
+.work-box:hover .work-image {
+  transform: scale(1.2);
+}
+
+.work-box {
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.work-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.2;
+  transform: scaleY(-1);
+}
+.work-description {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow-y: auto;
+  z-index: 1;
+}
+.work-description-inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.work-text {
+  font-size: 1.3rem;
+  line-height: 2;
+}
+.work-text .button {
+  width: 60%;
+  margin-top: 20px;
+  padding: 3px;
+  transition: 250ms;
+}
+
+.work-text .button:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #333;
+}
+
+.work-box.tree::after {
+  background-image: url('../images/tree.jpg');
+}
+.work-box.building::after {
+  background-image: url('../images/building.jpg');
+}
+.work-box.lake::after {
+  background-image: url('../images/lake.jpg');
+}
+.work-box.sky::after {
+  background-image: url('../images/sky.jpg');
+}
+
+.work-box:nth-child(odd) .work-image {
+  margin: 60% 0 0;
+}
+
+.work-box:nth-child(odd)::after {
+  top: 0;
+}
+
+.work-box:nth-child(odd) .work-description {
+  top: 0;
+}
+
+/* --------------------------------
+ * skills
+ * -------------------------------- */
+.skills {
+  padding: 80px 0;
+  background-color: #fff;
+  color: #333;
+}
+.skills-wrapper {
+  width: 80%;
+  margin: 65px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skill-box {
+  width: 33.33%;
+  text-align: center;
+}
+
+.skill-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  border: 4px solid;
+  border-radius: 50%;
+  font-size: 8rem;
+  color: #f1b400;
+  line-height: 142px;
+}
+
+.skill-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 0 20px 20px;
+}
+
+.skill-text {
+  margin: 0 20px;
+  line-height: 2;
+}
+
+/* --------------------------------
+ * contact
+ * -------------------------------- */
+.contact {
+  padding: 80px 0 150px;
+}
+.contact-form {
+  width: 50%;
+  margin: 50px auto 0;
+}
+.contact-form * {
+  display: block;
+  width: 100%;
+  margin: 0 auto 10px;
+  /*color: #fff;*/
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  outline: none;
+}
+.contact-form input[type=text]:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.5) inset;
+}
+.contact-form input[type=submit] {
+  width: 200px;
+  margin-top: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+}
+.contact-form textarea {
+  height: 150px;
+}
+.contact-form input[type=submit] {
+  background: none;
+}
+.contact-form input[type=submit]:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+.footer {
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
+
+/* --------------------------------
+ * smart phone
+ * -------------------------------- */
+@media (max-width: 1024px) {
+  body {
+    /*background-image: none;*/
+  }
+}
+@media (max-width: 768px) {
+   body {
+     font-size: 1.3rem;
+   }
+   .heading {
+     margin-top: 20px;
+     font-size: 2.5rem;
+   }
+  .heading::before,
+  .heading::after {
+    width: 10px;
+    height: 10px;
+    vertical-align: 3px;
+  }
+
+  /* --- header --- */
+   .header {
+     padding-top: 60px;
+   }
+   .site-title-sub {
+     font-size: 1.7rem;
+   }
+   .site-title-sub::before,
+   .site-title-sub::after {
+     display: block;
+     width: 80%;
+     margin: 10px auto;
+   }
+   .site-title {
+     margin-top: 35px;
+     font-size: 5rem;
+   }
+
+   /* --- about --- */
+   .about-text {
+     line-height: 1.8;
+   }
+   .works-wrapper {
+     flex-direction: column;
+   }
+   .work-box {
+     width: 100%;
+   }
+   .work-image {
+     display: none;
+   }
+   .work-description {
+     position: relative;
+   }
+
+   .work-box::after {
+     height: 100%;
+     transform: scaleY(1);
+     background-size: cover;
+     top: 0;
+   }
+
+   /* --- skills --- */
+  .skills-wrapper {
+    flex-direction: column;
+  }
+
+  .skill-box {
+    width: 100%;
+    margin: 40px auto;
+  }
+
+  .skill-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 5rem;
+    line-height: 92px;
+  }
+
+   /* --- contact --- */
+   .contact {
+     padding-bottom: 80px;
+   }
+   .contact-form {
+     width: 80%;
+   }
+}
+

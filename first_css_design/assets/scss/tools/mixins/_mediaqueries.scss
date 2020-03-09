@@ -1,0 +1,12 @@
+@mixin  max-screen($breakpoint) {
+  // 引数に設定された画面は売価のスタイルを指定するメディアクエリ
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin print () {
+  @media print {
+    @content;
+  }
+}
